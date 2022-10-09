@@ -6,10 +6,7 @@ node {
     }
 
     gitlabCommitStatus('build') {
-        docker.image('jhipster/jhipster:v7.8.1').inside('-u jhipster -e GRADLE_USER_HOME=.gradle') {
-            stage('check java') {
-                sh "java -version"
-            }
+        docker.image('samhello/samgw') {
 
             stage('clean') {
                 sh "chmod +x gradlew"
