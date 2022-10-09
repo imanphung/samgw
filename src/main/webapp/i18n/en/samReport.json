@@ -1,0 +1,33 @@
+{
+  "samgwApp": {
+    "samReport": {
+      "home": {
+        "title": "Reports",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Report",
+        "createOrEditLabel": "Create or edit a Report",
+        "notFound": "No Reports found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Report {{ id }}?"
+      },
+      "detail": {
+        "title": "Report"
+      },
+      "id": "ID",
+      "studentId": "Student Id",
+      "lessonId": "Lesson Id",
+      "comment": "Comment",
+      "star": "Star",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At"
+    }
+  },
+  "samApp": {
+    "samReport": {
+      "created": "A new Report is created with identifier {{ param }}",
+      "updated": "A Report is updated with identifier {{ param }}",
+      "deleted": "A Report is deleted with identifier {{ param }}"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "samgwApp": {
+    "paymentWallet": {
+      "home": {
+        "title": "Wallets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Wallet",
+        "createOrEditLabel": "Create or edit a Wallet",
+        "notFound": "No Wallets found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Wallet {{ id }}?"
+      },
+      "detail": {
+        "title": "Wallet"
+      },
+      "id": "ID",
+      "userId": "User Id",
+      "amount": "Amount",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At"
+    }
+  },
+  "paymentApp": {
+    "paymentWallet": {
+      "created": "A new Wallet is created with identifier {{ param }}",
+      "updated": "A Wallet is updated with identifier {{ param }}",
+      "deleted": "A Wallet is deleted with identifier {{ param }}"
+    }
+  }
+}

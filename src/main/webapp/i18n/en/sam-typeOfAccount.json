@@ -1,0 +1,9 @@
+{
+  "samgwApp": {
+    "TypeOfAccount": {
+      "null": "",
+      "TEACHER": "TEACHER",
+      "STUDENT": "STUDENT"
+    }
+  }
+}

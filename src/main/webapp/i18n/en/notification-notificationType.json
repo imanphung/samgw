@@ -1,0 +1,10 @@
+{
+  "samgwApp": {
+    "NotificationType": {
+      "null": "",
+      "EMAIL": "EMAIL",
+      "SMS": "SMS",
+      "PARCEL": "PARCEL"
+    }
+  }
+}

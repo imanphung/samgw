@@ -1,0 +1,32 @@
+{
+  "samgwApp": {
+    "samDeposit": {
+      "home": {
+        "title": "Deposits",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Deposit",
+        "createOrEditLabel": "Create or edit a Deposit",
+        "notFound": "No Deposits found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Deposit {{ id }}?"
+      },
+      "detail": {
+        "title": "Deposit"
+      },
+      "id": "ID",
+      "studentId": "Student Id",
+      "transferId": "Transfer Id",
+      "status": "Status",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At"
+    }
+  },
+  "samApp": {
+    "samDeposit": {
+      "created": "A new Deposit is created with identifier {{ param }}",
+      "updated": "A Deposit is updated with identifier {{ param }}",
+      "deleted": "A Deposit is deleted with identifier {{ param }}"
+    }
+  }
+}

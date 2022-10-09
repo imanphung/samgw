@@ -1,0 +1,12 @@
+{
+  "samgwApp": {
+    "RoomStatus": {
+      "null": "",
+      "CREATED": "CREATED",
+      "WAITING": "WAITING",
+      "INPROGRESS": "INPROGRESS",
+      "FINISHED": "FINISHED",
+      "ERROR": "ERROR"
+    }
+  }
+}

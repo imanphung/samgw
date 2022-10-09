@@ -1,0 +1,32 @@
+{
+  "samgwApp": {
+    "paymentTransfer": {
+      "home": {
+        "title": "Transfers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Transfer",
+        "createOrEditLabel": "Create or edit a Transfer",
+        "notFound": "No Transfers found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Transfer {{ id }}?"
+      },
+      "detail": {
+        "title": "Transfer"
+      },
+      "id": "ID",
+      "fromUserId": "From User Id",
+      "toUserId": "To User Id",
+      "amount": "Amount",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At"
+    }
+  },
+  "paymentApp": {
+    "paymentTransfer": {
+      "created": "A new Transfer is created with identifier {{ param }}",
+      "updated": "A Transfer is updated with identifier {{ param }}",
+      "deleted": "A Transfer is deleted with identifier {{ param }}"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "samgwApp": {
+    "TypeOfSocial": {
+      "null": "",
+      "FACEBOOK": "FACEBOOK",
+      "GOOGLE": "GOOGLE",
+      "ZOOM": "ZOOM"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "generator-jhipster": {
+    "applicationIndex": 0,
+    "applicationType": "gateway",
+    "applications": {
+      "notification": {
+        "applicationIndex": 3,
+        "serverPort": "8083"
+      },
+      "payment": {
+        "applicationIndex": 2,
+        "serverPort": "8082"
+      },
+      "sam": {
+        "applicationIndex": 1,
+        "serverPort": "8081"
+      }
+    },
+    "authenticationType": "jwt",
+    "baseName": "samgw",
+    "blueprints": [],
+    "buildTool": "gradle",
+    "cacheProvider": "no",
+    "clientFramework": "react",
+    "clientPackageManager": "npm",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1665309453477,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "devServerPort": 9060,
+    "dtoSuffix": "DTO",
+    "enableGradleEnterprise": false,
+    "enableHibernateCache": false,
+    "enableSwaggerCodegen": false,
+    "enableTranslation": true,
+    "entities": [
+      "Report",
+      "SocialNetWork",
+      "Transfer",
+      "Wallet",
+      "Mint",
+      "Notification",
+      "Invoice",
+      "Customer",
+      "Lesson",
+      "Room",
+      "Deposit"
+    ],
+    "entitySuffix": "",
+    "gradleEnterpriseHost": "",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "7.8.1",
+    "jwtSecretKey": "MjgwOTBlNTk2ZWZmNGYwYzFjMzczOGZmNTk0Y2E1ZDBkOGM3Y2MwM2Y5YzBhOTE3ZjcxZjFjZGVhZWMxOTRmMDA3NDdjNzdhNjgwNTUyNWIzNTgxNDEzMWQzYzFhODk5Y2MzYjEwMTkyMjI2YTZmYzQxZDAyZWVhMGE0NzQxNzM=",
+    "languages": ["en"],
+    "lastLiquibaseTimestamp": 1665310113000,
+    "messageBroker": false,
+    "monorepository": true,
+    "nativeLanguage": "en",
+    "otherModules": [],
+    "packageFolder": "com/samhello/samgw",
+    "packageName": "com.samhello.samgw",
+    "pages": [],
+    "prodDatabaseType": "postgresql",
+    "reactive": true,
+    "searchEngine": false,
+    "serverPort": "8080",
+    "serviceDiscoveryType": false,
+    "skipCheckLengthOfIdentifier": false,
+    "skipCommitHook": true,
+    "skipFakeData": false,
+    "skipUserManagement": false,
+    "testFrameworks": [],
+    "websocket": false,
+    "withAdminUi": true
+  }
+}

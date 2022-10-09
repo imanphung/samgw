@@ -1,0 +1,31 @@
+{
+  "samgwApp": {
+    "paymentMint": {
+      "home": {
+        "title": "Mints",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Mint",
+        "createOrEditLabel": "Create or edit a Mint",
+        "notFound": "No Mints found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Mint {{ id }}?"
+      },
+      "detail": {
+        "title": "Mint"
+      },
+      "id": "ID",
+      "adminId": "Admin Id",
+      "amount": "Amount",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At"
+    }
+  },
+  "paymentApp": {
+    "paymentMint": {
+      "created": "A new Mint is created with identifier {{ param }}",
+      "updated": "A Mint is updated with identifier {{ param }}",
+      "deleted": "A Mint is deleted with identifier {{ param }}"
+    }
+  }
+}
