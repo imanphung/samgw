@@ -18,6 +18,7 @@
     },
     "project": "./tsconfig.test.json"
   },
+  "root": true,
   "settings": {
     "react": {
       "version": "detect"
