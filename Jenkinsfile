@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout Source') {
             steps {
-                git 'https://github.com/imanphung/samgw.git'
+                checkout scm
             }
         }
     
@@ -76,7 +76,7 @@ pipeline {
         stage('Deploying Services to Kubernetes Cluster') {
             steps {
                 script {
-                    kubernetesDeploy(configs: "samgw-deployment.yml", kubeconfigId: "kubernetes")
+                    kubernetesDeploy(configs: "samgw-deployment.yml", kubeconfigId: "kubernetes-samhello")
                 }
             }
         }
