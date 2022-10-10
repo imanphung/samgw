@@ -96,3 +96,84 @@ spec:
               path: /management/health/liveness
               port: http
             initialDelaySeconds: 120
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: samgw-postgresql
+  namespace: samhello
+  labels:
+    app: samgw-postgresql
+type: Opaque
+data:
+  postgresql-password: ZTZkOTc3NzQzOGZhYTg2MDQ1ZjY5ZmUzZmVmY2IwY2QzZjZjOTMwOWZkNzQ5ZjE4OTE3NWUwZmFmZDQ5
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: samgw-postgresql
+  namespace: samhello
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: samgw-postgresql
+  template:
+    metadata:
+      labels:
+        app: samgw-postgresql
+    spec:
+      volumes:
+        - name: data
+          emptyDir: {}
+      containers:
+        - name: postgres
+          image: postgres:14.2
+          env:
+            - name: POSTGRES_USER
+              value: samgw
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: samgw-postgresql
+                  key: postgresql-password
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/postgresql/data
+              subPath: postgres
+          resources:
+            requests:
+              memory: '512Mi'
+              cpu: '500m'
+            limits:
+              memory: '1Gi'
+              cpu: '1'
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: samgw-postgresql
+  namespace: samhello
+spec:
+  selector:
+    app: samgw-postgresql
+  ports:
+    - port: 5432
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: samgw
+  namespace: samhello
+  labels:
+    app: samgw
+spec:
+  selector:
+    app: samgw
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
