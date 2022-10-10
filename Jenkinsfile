@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout Source') {
             steps {
-                checkout scm
+                git 'https://github.com/imanphung/samgw.git'
             }
         }
     
@@ -60,7 +60,7 @@ pipeline {
         //     }
         // }
     
-        stage('Build and Pushing Docker Image') {
+        stage('Pushing Image') {
             environment {
                 registryCredential = 'dockerhublogin'
             }
