@@ -27,23 +27,6 @@ spec:
                         - samgw
                 topologyKey: kubernetes.io/hostname
               weight: 100
-      initContainers:
-        - name: init-ds
-          image: busybox:latest
-          command:
-            - '/bin/sh'
-            - '-c'
-            - |
-              while true
-              do
-                rt=$(nc -z -w 1 samgw-postgresql 5432)
-                if [ $? -eq 0 ]; then
-                  echo "DB is UP"
-                  break
-                fi
-                echo "DB is not yet reachable;sleep for 10s before retry"
-                sleep 10
-              done
       containers:
         - name: samgw-app
           image: antphungit/samgw
@@ -79,8 +62,8 @@ spec:
               memory: '512Mi'
               cpu: '500m'
             limits:
-              memory: '1Gi'
-              cpu: '1'
+              memory: '512Mi'
+              cpu: '512Mi'
           ports:
             - name: http
               containerPort: 8080
@@ -148,8 +131,8 @@ spec:
               memory: '512Mi'
               cpu: '500m'
             limits:
-              memory: '1Gi'
-              cpu: '1'
+              memory: '512Mi'
+              cpu: '500m'
 ---
 apiVersion: v1
 kind: Service
