@@ -15,18 +15,6 @@ spec:
         app: samgw
         version: 'v1'
     spec:
-      affinity:
-        podAntiAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-            - podAffinityTerm:
-                labelSelector:
-                  matchExpressions:
-                    - key: app
-                      operator: In
-                      values:
-                        - samgw
-                topologyKey: kubernetes.io/hostname
-              weight: 100
       containers:
         - name: samgw-app
           image: antphungit/samgw
