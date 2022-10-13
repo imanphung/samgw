@@ -22,9 +22,38 @@ spec:
         app: samgw
         version: 'v1'
     spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - samgw
+                topologyKey: kubernetes.io/hostname
+              weight: 100
+      initContainers:
+        - name: init-ds
+          image: busybox:latest
+          command:
+            - '/bin/sh'
+            - '-c'
+            - |
+              while true
+              do
+                rt=$(nc -z -w 1 samgw-postgresql 5432)
+                if [ $? -eq 0 ]; then
+                  echo "DB is UP"
+                  break
+                fi
+                echo "DB is not yet reachable;sleep for 10s before retry"
+                sleep 10
+              done
       containers:
         - name: samgw-app
-          image: antphungit/samgw
+          image: samhello/samgw
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: prod
@@ -33,7 +62,6 @@ spec:
                 secretKeyRef:
                   name: jwt-secret
                   key: JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET
-                  optional: true
             - name: SPRING_DATASOURCE_URL
               value: jdbc:postgresql://samgw-postgresql.samhello.svc.cluster.local:5432/samgw
             - name: SPRING_DATASOURCE_USERNAME
@@ -43,7 +71,6 @@ spec:
                 secretKeyRef:
                   name: samgw-postgresql
                   key: postgresql-password
-                  optional: true
             - name: SPRING_LIQUIBASE_URL
               value: jdbc:postgresql://samgw-postgresql.samhello.svc.cluster.local:5432/samgw
             - name: SPRING_R2DBC_URL
