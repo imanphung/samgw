@@ -1,10 +1,10 @@
-apiVersion: v1
-kind: Secret
-metadata:
-  name: jwt-secret
-data:
-  JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET: MjgwOTBlNTk2ZWZmNGYwYzFjMzczOGZmNTk0Y2E1ZDBkOGM3Y2MwM2Y5YzBhOTE3ZjcxZjFjZGVhZWMxOTRmMDA3NDdjNzdhNjgwNTUyNWIzNTgxNDEzMWQzYzFhODk5Y2MzYjEwMTkyMjI2YTZmYzQxZDAyZWVhMGE0NzQxNzM=
----
+# apiVersion: v1
+# kind: Secret
+# metadata:
+#   name: jwt-secret
+# data:
+#   JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET: MjgwOTBlNTk2ZWZmNGYwYzFjMzczOGZmNTk0Y2E1ZDBkOGM3Y2MwM2Y5YzBhOTE3ZjcxZjFjZGVhZWMxOTRmMDA3NDdjNzdhNjgwNTUyNWIzNTgxNDEzMWQzYzFhODk5Y2MzYjEwMTkyMjI2YTZmYzQxZDAyZWVhMGE0NzQxNzM=
+# ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -28,11 +28,6 @@ spec:
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: prod
-            - name: JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET
-              valueFrom:
-                secretKeyRef:
-                  name: jwt-secret
-                  key: JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET
             - name: SPRING_DATASOURCE_URL
               value: jdbc:postgresql://samgw-postgresql.samhello.svc.cluster.local:5432/samgw
             - name: SPRING_DATASOURCE_USERNAME
