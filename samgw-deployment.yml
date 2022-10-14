@@ -61,7 +61,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: jwt-secret
-                  key: JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET
+                  key: secret
             - name: SPRING_DATASOURCE_URL
               value: jdbc:postgresql://samgw-postgresql.samhello.svc.cluster.local:5432/samgw
             - name: SPRING_DATASOURCE_USERNAME
