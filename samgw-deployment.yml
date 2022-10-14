@@ -154,7 +154,8 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: samhello
+  name: nginx
+  namespace: samhello
 spec:
   selector:
     matchLabels:
