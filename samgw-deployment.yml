@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: samgw-app
-          image: samhello/samgw
+          image: antphungit/samgw
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: prod
